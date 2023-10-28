@@ -4,7 +4,8 @@ import os
 import sys
 from src.exceptions import CustomException
 from src.logger import logging
-from config import DataIngestionConfig
+from src.components.data_transformation import DataTransformation
+from config import DataIngestionConfig, DataTransformationConfig
 
 
 class DataIngestion:
@@ -12,6 +13,9 @@ class DataIngestion:
         self.ingestion_config = DataIngestionConfig()
 
     def initiate_data_ingestion(self):
+        '''
+        This method is responsible for Data Ingestion.
+        '''
         logging.info("Data Ingestion Initialised...")
         try:
             logging.info('Reading the CSV Dataset as Dataframe')
@@ -33,8 +37,3 @@ class DataIngestion:
 
         except Exception as e:
             raise CustomException(e, sys)
-
-
-if __name__ == "__main__":
-    obj = DataIngestion()
-    print(obj.initiate_data_ingestion())
