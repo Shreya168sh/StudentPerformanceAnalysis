@@ -13,3 +13,7 @@ class DataIngestionConfig:
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
 
+
+@dataclass
+class ModelTrainerConfig:
+    trained_model_path = os.path.join('artifacts', 'model.pkl')

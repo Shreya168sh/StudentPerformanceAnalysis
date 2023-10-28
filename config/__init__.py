@@ -1,1 +1,1 @@
-from .config import DataIngestionConfig, DataTransformationConfig
+from .config import DataIngestionConfig, DataTransformationConfig, ModelTrainerConfig
