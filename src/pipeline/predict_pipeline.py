@@ -11,8 +11,7 @@ class PredictPipeline:
 
     def predict(self, features):
         try:
-            # base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-            base_path = '/home/shreya/work/mlproject'
+            base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
             model_path = os.path.join(base_path, 'artifacts/model.pkl')
             preprocessor_path = os.path.join(base_path, 'artifacts/proprocessor.pkl')
 
