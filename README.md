@@ -66,5 +66,15 @@ http://localhost:8084/docs
 ![Web Interface](<Screenshot from 2023-11-04 13-32-17.png>)
 
 
-
-
+## Project Structure
+📁 StudentPerformanceAnalysis/
+├─📁 .ebextensions/
+├─📁 artifacts/
+├─📁 catboost_info/
+├─📁 config/
+├─📁 logs/
+├─📁 notebooks/
+│ ├─📁 data/
+├─📁 src/
+│ ├─📁 components/
+│ ├─📁 pipeline/
