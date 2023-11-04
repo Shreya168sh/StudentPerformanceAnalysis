@@ -20,6 +20,7 @@ class DataIngestion:
         logging.info("Data Ingestion Initialised...")
         try:
             logging.info('Reading the CSV Dataset as Dataframe')
+
             # Reading csv dataset as a pandas dataframe
             df = pd.read_csv(dataset_path)
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
