@@ -32,6 +32,7 @@ class ModelTrainer:
                 test_array[:,:-1],
                 test_array[:,-1]
             )
+
             # Create a dictionary of models
             models = {
                 "Random Forest": RandomForestRegressor(),
