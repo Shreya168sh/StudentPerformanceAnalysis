@@ -28,5 +28,4 @@ class TrainPipeline:
 
 if __name__ == "__main__":
     train_pipeline = TrainPipeline()
-    # dataset_path = os.path.join(DataIngestionConfig.base_path, "notebooks/data/StudentsPerformance.csv")
-    train_pipeline.train_model(dataset_path="/home/shreya/work/mlproject/StudentPerformanceAnalysis/notebooks/data/StudentsPerformance.csv")
+    train_pipeline.train_model(dataset_path="/notebooks/data/StudentsPerformance.csv")
