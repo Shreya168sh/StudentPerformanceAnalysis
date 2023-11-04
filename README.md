@@ -68,13 +68,23 @@ http://localhost:8084/docs
 
 ## Project Structure
 📁 StudentPerformanceAnalysis/
+
 ├─📁 .ebextensions/
+
 ├─📁 artifacts/
+
 ├─📁 catboost_info/
+
 ├─📁 config/
+
 ├─📁 logs/
+
 ├─📁 notebooks/
+
 │ ├─📁 data/
+
 ├─📁 src/
+
 │ ├─📁 components/
+
 │ ├─📁 pipeline/
