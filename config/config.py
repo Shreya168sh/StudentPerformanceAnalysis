@@ -16,5 +16,5 @@ class DataTransformationConfig:
 
 
 @dataclass
-class ModelTrainerConfig:
+class ModelTrainerConfig: 
     trained_model_path = os.path.join("artifacts", "model.pkl")
