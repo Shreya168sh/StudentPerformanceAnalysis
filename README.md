@@ -73,8 +73,8 @@ http://localhost:8084/docs
 ├─📁 catboost_info/     
 ├─📁 config/     
 ├─📁 logs/     
-├─📁 notebooks/     
-| ├─📁 data/     
+├─📁 notebooks/      
+│ ├─📁 data/     
 ├─📁 src/     
 │ ├─📁 components/     
 │ ├─📁 pipeline/    
