@@ -30,6 +30,7 @@ All the transformation of data will be implemented under this component.
 
 ### Component 3: Model Training
 Model traing will be implemented under this component.
+To train the model, execute the following command in the terminal:
 
 ### Component 4: Build Pipelines
 Two pipelines will be created:
