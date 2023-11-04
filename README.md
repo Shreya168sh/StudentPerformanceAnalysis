@@ -24,7 +24,7 @@ This is used to install a package locally, most often in the case when you are d
 2. Access the web interface in the browser at:
 http://localhost:8084/docs
 3. To predict the Maths score of a student, fill in the required student information under the prediction route by clicking on the "Try it out" button in the upper right corner.
-![Web Interface](<Screenshot from 2023-11-04 13-32-17.png>)
+![Web Interface](<images/Screenshot from 2023-11-04 13-32-17.png>)
 
 ## Dataset - Student Performance in Exams
 The link to the dataset: https://www.kaggle.com/code/spscientist/student-performance-in-exams/input
@@ -60,7 +60,7 @@ In this phase:
 3. Built a machine learning pipeline for categorical features to handle missing values (if any) with a strategy of 'most frequent', then encoded them using the one-hot encoder and then scaled the features.
 4. Transformation on numerical features and categorical features is applied using Column Transformer and saved in a pickle file.
 
-![Difference between machine learning pipeline and column tranformer](image.png)
+![Difference between machine learning pipeline and column transformer](images/image.png)
 
 ### Phase 3: Model Training
 The model will be trained under this component to predict the student's score in Maths subjects.
