@@ -3,17 +3,17 @@ import os
 import pandas as pd
 from src.exceptions import CustomException
 from src.utils import load_object
+from config import DataIngestionConfig
 
 
 class PredictPipeline:
     def __init__(self):
-        pass
+        self.base_path = DataIngestionConfig.base_path
 
     def predict(self, features):
         try:
-            base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-            model_path = os.path.join(base_path, 'artifacts/model.pkl')
-            preprocessor_path = os.path.join(base_path, 'artifacts/proprocessor.pkl')
+            model_path = os.path.join(self.base_path, 'artifacts/model.pkl')
+            preprocessor_path = os.path.join(self.base_path, 'artifacts/proprocessor.pkl')
 
             print(f"model path: {model_path}")
             print(f"preprocessor path: {preprocessor_path}")

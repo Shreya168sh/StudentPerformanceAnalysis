@@ -19,10 +19,10 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         '''
-        This function si responsible for data trnasformation
-        
+        This function is responsible for data trnasformation
         '''
         try:
+            # Seaprating numerical and categorical features
             numerical_columns = ["writing score", "reading score"]
             categorical_columns = [
                 "gender",
@@ -32,44 +32,40 @@ class DataTransformation:
                 "test preparation course",
             ]
 
-            numerical_pipeline= Pipeline(
+            # Defining transformations for Numerical features
+            numerical_pipeline = Pipeline(
                 steps=[
-                ("imputer",SimpleImputer(strategy="median")),
-                ("scaler",StandardScaler())
-
+                ("imputer", SimpleImputer(strategy="median")),
+                ("scaler", StandardScaler())
                 ]
             )
 
-            categorical_pipeline=Pipeline(
-
+            # Defining transformations for Categorical features
+            categorical_pipeline = Pipeline(
                 steps=[
-                ("imputer",SimpleImputer(strategy="most_frequent")),
-                ("one_hot_encoder",OneHotEncoder()),
-                ("scaler",StandardScaler(with_mean=False))
+                ("imputer", SimpleImputer(strategy="most_frequent")),
+                ("one_hot_encoder", OneHotEncoder()),
+                ("scaler", StandardScaler(with_mean=False))
                 ]
-
             )
 
             logging.info(f"Categorical columns: {categorical_columns}")
             logging.info(f"Numerical columns: {numerical_columns}")
 
-            preprocessor=ColumnTransformer(
+            # Applying Transformations on Numerical and Categorical features
+            preprocessor = ColumnTransformer(
                 [
-                ("num_pipeline",numerical_pipeline,numerical_columns),
-                ("cat_pipelines",categorical_pipeline,categorical_columns)
-
+                    ("num_pipeline", numerical_pipeline, numerical_columns),
+                    ("cat_pipelines", categorical_pipeline, categorical_columns)
                 ]
-
-
             )
 
             return preprocessor
         
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e, sys)
         
-    def initiate_data_transformation(self,train_path,test_path):
-
+    def initiate_data_transformation(self, train_path, test_path):
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
@@ -80,6 +76,7 @@ class DataTransformation:
 
             target_column_name = "math score"
 
+            # Separating features and target for training set and testing set
             input_feature_train_df = train_df.drop(columns=[target_column_name], axis=1)
             target_feature_train_df = train_df[target_column_name]
 
@@ -90,7 +87,7 @@ class DataTransformation:
                 "Applying preprocessing object on training dataframe and testing dataframe."
             )
 
-            # print(f"input_features_df: {input_feature_train_df}")
+            # Apply preprocessing on training and testing set
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
 
@@ -108,8 +105,8 @@ class DataTransformation:
             return (
                 train_arr,
                 test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path,
+                self.data_transformation_config.preprocessor_obj_file_path
             )
 
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e, sys)
