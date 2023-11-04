@@ -15,6 +15,10 @@ cd StudentPerformanceAnalysis
 3. Install the required Python packages from the following command: 
    pip install -r requirements.txt
 
+Note -> The -e . in the requirements file is:
+-e is short for --editable, and . refers to the current working directory, so together, it means to install the current directory (i.e. your project) in editable mode.
+This is used to install a package locally, most often in the case when you are developing it on your system. It will just link the package to the original location, basically meaning any changes to the original package would reflect directly in your environment.
+
 ## Usage
 1. Run the application: python3 application.py
 2. Access the web interface in the browser at:
@@ -74,10 +78,6 @@ In this phase, a prediction pipeline is built to predict the Maths score of new 
 
 ### Phase 5: FastAPI Web App
 In this phase, I have used FastAPI to create a web interface for predicting the score of students in the Maths subject.
-
-Note -> The -e . in the requirements file is:
--e is short for --editable, and . refers to the current working directory, so together, it means to install the current directory (i.e. your project) in editable mode.
-This is used to install a package locally, most often in the case when you are developing it on your system. It will just link the package to the original location, basically meaning any changes to the original package would reflect directly in your environment.
 
 ## Results
 Linear Regression has the highest accuracy, approximately 88%, among all the other classification models that have been used in this project to predict the student's score in Maths subject on the basis of certain factors.
