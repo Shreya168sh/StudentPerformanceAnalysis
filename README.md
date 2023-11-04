@@ -52,7 +52,7 @@ cd StudentPerformanceAnalysis
 3. Install the required python packages from the following command: 
 pip install -r requirements.txt
 
-### Note
+#### Note: 
 The -e . in the requirements file is:
 -e, --editable <path/url>
 -e is short for --editable, and . refers to the current working directory, so together, it means to install the current directory (i.e. your project) in editable mode.
